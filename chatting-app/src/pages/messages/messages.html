@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Messages</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngFor="let message of messages" class="message-wrapper">
+
+    <div *ngIf="username !== message.From">
+      <div class="chat-bubble left">
+        <div class="message-detail">
+          <b>{{message.From}}</b>
+        </div>
+        <div class="message">
+          {{message.Text}}
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="username === message.From">
+      <div class="chat-bubble right">
+        <div class="message-detail">
+          <b>{{message.From}}</b>
+        </div>
+        <div class="message">
+          {{message.Text}}
+        </div>
+      </div>
+    </div>
+
+    <div class="cf"></div>
+
+  </div>
+</ion-content>
+
+<ion-footer footer keyboard-attach>
+  <ion-item>
+      <ion-label floating>Send a message</ion-label>
+      <ion-input type="text" [(ngModel)]="text"></ion-input>
+    </ion-item>
+    <button ion-button clear type="submit" (click)="send()"><ion-icon name="send"></ion-icon></button>
+</ion-footer>

@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Channels
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" [(ngModel)]="username"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-card *ngFor="let channel of channels" (click)="openChannel(channel.Id)">
+    <ion-card-header>
+      {{channel.Name}}
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+
+<ion-footer footer keyboard-attach>
+  <ion-item>
+      <ion-label floating>New channel</ion-label>
+      <ion-input type="text" [(ngModel)]="newChannel"></ion-input>
+    </ion-item>
+    <button ion-button clear type="submit" (click)="createChannel()"><ion-icon name="add"></ion-icon></button>
+</ion-footer>

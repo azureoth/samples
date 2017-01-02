@@ -7,24 +7,24 @@
 <ion-content padding>
   <div *ngFor="let message of messages" class="message-wrapper">
 
-    <div *ngIf="username !== message.From">
+    <div *ngIf="username !== message.FromUser">
       <div class="chat-bubble left">
         <div class="message-detail">
-          <b>{{message.From}}</b>
+          <b>{{message.FromUser}}</b>
         </div>
         <div class="message">
-          {{message.Text}}
+          {{message.TextContent}}
         </div>
       </div>
     </div>
 
-    <div *ngIf="username === message.From">
+    <div *ngIf="username === message.FromUser">
       <div class="chat-bubble right">
         <div class="message-detail">
-          <b>{{message.From}}</b>
+          <b>{{message.FromUser}}</b>
         </div>
         <div class="message">
-          {{message.Text}}
+          {{message.TextContent}}
         </div>
       </div>
     </div>

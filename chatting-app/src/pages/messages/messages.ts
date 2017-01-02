@@ -21,9 +21,9 @@ export class MessagesPage {
 
   send() {
     let message = {
-      From: this.username,
-      Text: this.text,
-      ChannelId: this.channelId
+      FromUser: this.username,
+      TextContent: this.text,
+      Channels_Id_Messages: this.channelId
     };
 
     this.service.sendMessage(message).then(() => {

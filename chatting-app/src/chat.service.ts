@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ChatService {
     // private instance variable to hold base url
-    private url = 'http://azureothrestfuldbsample.azurewebsites.net/api/apps/demoapp/';
+    private url = 'http://localhost:4744/api/db/demoapp/';
 
     // Resolve HTTP using the constructor
     constructor(private http: Http) { }
